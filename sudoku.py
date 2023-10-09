@@ -1,6 +1,15 @@
-def print_board(board):
+'''def print_board(board):
     for row in board:
-        print(" ".join(map(str, row)))
+        print(" ".join(map(str, row)))'''
+def print_board(board):
+    for i, row in enumerate(board):
+        if i % 3 == 0 and i != 0:
+            print("-" * 21)  # Print horizontal line after every 3 rows
+        for j, num in enumerate(row):
+            if j % 3 == 0 and j != 0:
+                print("|", end=" ")  # Print vertical line between columns
+            print(num, end=" ")
+        print()  # Move to the next line for the next row
 
 
 def is_valid_move(board, row, col, num):
